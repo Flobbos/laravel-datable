@@ -1,5 +1,5 @@
 {
-    "name": "flobbos/laravel-databale",
+    "name": "flobbos/laravel-datable",
     "description": "A tiny Laravel package for easily switching localized dates",
     "keywords": ["laravel", "date", "carbon"],
     "license": "MIT",
