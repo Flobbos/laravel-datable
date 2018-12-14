@@ -57,3 +57,14 @@ except when you're pulling formats like this:
 ```
 
 The output will then have the localized month name instead of the default English. 
+
+## Laravel compatibility
+
+ Laravel  | Crudable
+:---------|:----------
+ 5.6      | >=0.4
+ 5.5      | >=0.4
+ 5.4      | >=0.4
+ 5.3      | >=0.4
+ 5.2      | >=0.1
+ 5.1      | >=0.1
