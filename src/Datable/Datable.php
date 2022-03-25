@@ -4,10 +4,10 @@ namespace Flobbos\Datable;
 
 use Jenssegers\Date\Date;
 
-trait Datable {
-    
-    protected function asDateTime($value){
-        
+trait Datable
+{
+    protected function asDateTime($value)
+    {
         Date::setLocale(app()->getLocale());
         // If this value is already a Carbon instance, we shall just return it as is.
         // This prevents us having to re-instantiate a Date instance when we know
@@ -16,12 +16,13 @@ trait Datable {
             return $value;
         }
 
-         // If the value is already a DateTime instance, we will just skip the rest of
-         // these checks since they will be a waste of time, and hinder performance
-         // when checking the field. We will just return the DateTime right away.
+        // If the value is already a DateTime instance, we will just skip the rest of
+        // these checks since they will be a waste of time, and hinder performance
+        // when checking the field. We will just return the DateTime right away.
         if ($value instanceof DateTimeInterface) {
             return new Date(
-                $value->format('Y-m-d H:i:s.u'), $value->getTimezone()
+                $value->format('Y-m-d H:i:s.u'),
+                $value->getTimezone()
             );
         }
 
@@ -44,4 +45,4 @@ trait Datable {
         // that is returned back out to the developers after we convert it here.
         return Date::createFromFormat($this->getDateFormat(), $value);
     }
-} 
+}
